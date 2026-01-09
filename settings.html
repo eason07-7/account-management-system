@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳戶管理系統 - 個人設定</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/settings.css">
+</head>
+<body>
+    <div class="header">
+        <div class="user-info">
+            <span id="currentUsername">載入中...</span>
+            <div class="header-buttons">
+                <a href="home.html" class="btn btn-secondary">返回首頁</a>
+                <button id="logoutBtn" class="btn btn-secondary">登出</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1>個人設定</h1>
+        </div>
+
+        <div id="loadingMessage" class="loading-message">載入中...</div>
+        <div id="errorMessage" class="error-message"></div>
+        <div id="successMessage" class="success-message"></div>
+
+        <div class="settings-card">
+            <form id="settingsForm">
+                <div class="form-group">
+                    <label for="account">會員帳號</label>
+                    <input type="text" id="account" name="account" readonly disabled>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">會員姓名</label>
+                    <input type="text" id="name" name="name" readonly disabled>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">帳號密碼</label>
+                    <input type="password" id="password" name="password" readonly disabled>
+                    <small>密碼無法在此修改</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">會員連絡電話</label>
+                    <input type="text" id="phone" name="phone" placeholder="請輸入連絡電話">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">會員地址</label>
+                    <textarea id="address" name="address" rows="3" placeholder="請輸入地址"></textarea>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">儲存設定</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='home.html'">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/settings.js"></script>
+</body>
+</html>

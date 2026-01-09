@@ -1,0 +1,39 @@
+# 依賴項
+node_modules/
+package-lock.json
+yarn.lock
+
+# 環境變數和配置
+.env
+.env.local
+.env.*.local
+config.local.js
+
+# 編輯器設定
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 作業系統檔案
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日誌檔案
+*.log
+logs/
+
+# 建置輸出
+dist/
+build/
+*.map
+
+# 暫存檔案
+*.tmp
+*.temp
+.cache/
+
+# Supabase 本地設定（如果有的話）
+.supabase/

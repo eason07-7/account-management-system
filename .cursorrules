@@ -1,0 +1,31 @@
+# Cursor Rules Configuration
+
+## Always Apply Rules
+這些規則將自動應用於所有對話中，確保開發過程的一致性和品質。
+
+### 基礎規則
+@docs/fundations.mdc alwaysApply
+
+### 前端開發規則
+@docs/front-developer.mdc alwaysApply
+
+### 專案架構規則
+@docs/project-architecture.mdc alwaysApply
+
+## 專案特定規則
+
+### 語言要求
+- 所有程式碼註解、變數命名、文件使用繁體中文
+- 使用者介面文字使用繁體中文
+- 錯誤訊息和提示使用繁體中文
+
+### 技術棧
+- 後端：Supabase
+- 部署：GitHub Pages
+- 版本控制：GitHub
+
+### 開發規範
+- 遵循 PRD.md 中定義的功能需求
+- 實作適當的錯誤處理和驗證
+- 確保所有功能都有適當的測試
+- 保持程式碼整潔和可維護性

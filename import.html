@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳戶管理系統 - 資料匯入</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/import.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="user-info">
+            <span id="currentUsername">載入中...</span>
+            <div class="header-buttons">
+                <a href="home.html" class="btn btn-secondary">返回首頁</a>
+                <button id="logoutBtn" class="btn btn-secondary">登出</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1>Excel 資料匯入</h1>
+            <p class="page-description">選擇 Excel 檔案，系統會自動讀取並匯入會員資料</p>
+        </div>
+
+        <div id="loadingMessage" class="loading-message" style="display: none;">處理中...</div>
+        <div id="errorMessage" class="error-message"></div>
+        <div id="successMessage" class="success-message"></div>
+
+        <div class="import-card">
+            <div class="file-upload-area" id="fileUploadArea">
+                <input type="file" id="fileInput" accept=".xlsx,.xls" style="display: none;">
+                <div class="upload-icon">:D</div>
+                <p>點擊或拖放 Excel 檔案到此處</p>
+                <p class="upload-hint">支援 .xlsx 和 .xls 格式</p>
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                    選擇檔案
+                </button>
+            </div>
+
+            <div id="previewSection" class="preview-section" style="display: none;">
+                <h3>資料預覽</h3>
+                <div class="preview-info">
+                    <p>共找到 <span id="rowCount">0</span> 筆資料</p>
+                </div>
+                <div class="preview-table-container">
+                    <table id="previewTable" class="preview-table">
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="import-actions">
+                    <button id="importBtn" class="btn">開始匯入</button>
+                    <button id="cancelBtn" class="btn">取消</button>
+                </div>
+            </div>
+
+            <div id="importProgress" class="import-progress" style="display: none;">
+                <h3>匯入進度</h3>
+                <div id="lottieContainer" class="lottie-container"></div>
+                <p id="progressText">準備中...</p>
+                <div id="importResults" class="import-results"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/import.js"></script>
+</body>
+</html>

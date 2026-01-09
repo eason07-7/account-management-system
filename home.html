@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳戶管理系統 - 首頁</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+    <div class="header">
+        <div class="user-info">
+            <span id="currentUsername">載入中...</span>
+            <div class="header-buttons">
+                <a href="settings.html" class="btn btn-secondary" id="settingsBtn">設定</a>
+                <button id="logoutBtn" class="btn btn-secondary">登出</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1>帳戶資訊列表</h1>
+            <div id="adminControls" class="admin-controls" style="display: none;">
+                <a href="import.html" class="btn btn-secondary">匯入資料</a>
+                <button id="addUserBtn" class="btn btn-primary">新增帳戶</button>
+            </div>
+        </div>
+
+        <div id="loadingMessage" class="loading-message">載入中...</div>
+        <div id="errorMessage" class="error-message"></div>
+        
+        <div id="accountsTable" class="accounts-table-container"></div>
+    </div>
+
+    <!-- 新增/編輯帳戶的彈窗 -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">新增帳戶</h2>
+            <form id="userForm">
+                <input type="hidden" id="userId" name="userId">
+                <div class="form-group">
+                    <label for="modalAccount">會員帳號 <span class="required">*</span></label>
+                    <input type="text" id="modalAccount" name="account" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalName">會員姓名 <span class="required">*</span></label>
+                    <input type="text" id="modalName" name="name" required>
+                </div>
+                <div class="form-group" id="passwordGroup">
+                    <label for="modalPassword">帳號密碼 <span class="required">*</span></label>
+                    <input type="password" id="modalPassword" name="password" minlength="4">
+                    <small id="passwordHint">編輯時留空則不修改密碼</small>
+                </div>
+                <div class="form-group">
+                    <label for="modalPhone">會員連絡電話</label>
+                    <input type="text" id="modalPhone" name="phone" placeholder="請輸入連絡電話">
+                </div>
+                <div class="form-group">
+                    <label for="modalAddress">會員地址</label>
+                    <textarea id="modalAddress" name="address" rows="3" placeholder="請輸入地址" style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 16px; font-family: inherit; resize: vertical;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="modalRole">用戶角色 <span class="required">*</span></label>
+                    <select id="modalRole" name="role" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 16px; font-family: inherit;">
+                        <option value="user">一般用戶</option>
+                        <option value="admin">管理員</option>
+                    </select>
+                </div>
+                <div id="modalErrorMessage" class="error-message"></div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">儲存</button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/home.js"></script>
+</body>
+</html>
