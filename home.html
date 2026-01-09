@@ -27,10 +27,27 @@
             </div>
         </div>
 
+        <!-- 搜尋功能 -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜尋會員姓名或帳號..." class="search-input">
+                <button id="searchBtn" class="btn">搜尋</button>
+                <button id="clearSearchBtn" class="btn" style="display: none;">清除</button>
+            </div>
+        </div>
+
+        <!-- Lottie 搜尋動畫 -->
+        <div id="searchAnimation" class="search-animation" style="display: none;">
+            <div id="lottieSearchContainer"></div>
+        </div>
+
         <div id="loadingMessage" class="loading-message">載入中...</div>
         <div id="errorMessage" class="error-message"></div>
         
         <div id="accountsTable" class="accounts-table-container"></div>
+
+        <!-- 分頁控制 -->
+        <div id="pagination" class="pagination"></div>
     </div>
 
     <!-- 新增/編輯帳戶的彈窗 -->
@@ -77,6 +94,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
     <script type="module" src="js/config.js"></script>
     <script type="module" src="js/auth.js"></script>
     <script type="module" src="js/home.js"></script>

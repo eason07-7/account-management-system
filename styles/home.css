@@ -1,5 +1,91 @@
 /* 首頁樣式 */
 
+/* 搜尋區域 */
+.search-section {
+    margin-bottom: 24px;
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.search-box {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* 搜尋動畫 */
+.search-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin: 20px 0;
+}
+
+#lottieSearchContainer {
+    width: 200px;
+    height: 200px;
+}
+
+/* 分頁控制 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: white;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 40px;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: var(--background);
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination button.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pagination .page-info {
+    margin: 0 12px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
 /* 頁首 */
 .header {
     background: var(--card-background);
